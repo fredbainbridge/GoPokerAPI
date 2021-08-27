@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	controllers.RegisterControllers();
-	http.ListenAndServe(":4999", nil)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":8080", nil)
 }
