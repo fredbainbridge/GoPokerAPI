@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gopokerapi
+spec:
+  selector:
+    matchLabels:
+      app: gopokerapi
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: gopokerapi
+    spec:
+      containers:
+      - name: gopokerapi
+        image: gcr.io/local-terminus-324220/gopokerapi:latest
+        ports:
+        - containerPort: 8080
