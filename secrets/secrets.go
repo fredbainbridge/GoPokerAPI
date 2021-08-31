@@ -19,15 +19,18 @@ func GetSecrets() (*Secrets, error) {
 	var secrets Secrets
 	err = json.Unmarshal(data, &secrets)
 	if err != nil {
-        fmt.Println("error:", err)
+		fmt.Println("error:", err)
 		return nil, err
-    }
+	}
 	return &secrets, nil
 }
 
 type Secrets struct {
 	DBName           string
 	DBServer         string
+	DBUserName       string
+	DBPassword       string
+	DBPort           int
 	MavenAPIUrl      string
 	MavenAPIPassword string
 }
