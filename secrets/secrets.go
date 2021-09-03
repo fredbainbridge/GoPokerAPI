@@ -9,8 +9,8 @@ import (
 )
 
 func GetSecrets() (*Secrets, error) {
-	gp := os.Getenv("GOPATH")
-	ap := path.Join(gp, "secrets.json")
+	sp := os.Getenv("SECRET_PATH")
+	ap := path.Join(sp, "secrets.json")
 	data, err := ioutil.ReadFile(ap)
 	if err != nil {
 		fmt.Print(err)

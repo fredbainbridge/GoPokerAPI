@@ -1,12 +1,14 @@
 package models
 
+import "database/sql"
+
 type User struct {
 	ID            int
 	SlackID       string
 	UserName      string
 	EmailAddress  string
 	RealName      string
-	AvatarHash    string
+	AvatarHash    sql.NullString
 	AvatarIndex   string
-	SlackUserName string
+	SlackUserName sql.NullString
 }
